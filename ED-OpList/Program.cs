@@ -28,6 +28,35 @@ namespace ED_OpList
             {
                 Console.WriteLine($"Se encontro {nodo.Dato}");
             }
+
+            Console.WriteLine("----- Buscando por indice -----");
+            int Indice = 1;
+            Nodo nodoIndice = lista.BuscarIndice(Indice);
+            if (nodoIndice == null)
+            {
+                Console.WriteLine("No se encontró");
+            }
+            else
+            {
+                Console.WriteLine($"Se encontró {nodoIndice.Dato} en el indice {Indice}");
+            }
+
+            Console.WriteLine("----- Buscando nodo anterior -----");
+            Nodo nodoAnterior = lista.BuscarAnterior("dos");
+            if (nodoAnterior == null)
+            {
+                Console.WriteLine("No se encontró");
+            }
+            else
+            {
+                Console.WriteLine($"Se encontró {nodoAnterior.Dato}");
+            }
+
+
+            Console.WriteLine("----- Eliminando un nodo -----");
+            lista.BorrarNodo("dos");
+            Console.WriteLine(lista.RecorrerLista());
+
         }
     }
 }

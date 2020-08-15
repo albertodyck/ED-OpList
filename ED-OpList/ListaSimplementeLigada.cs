@@ -95,6 +95,69 @@ namespace ED_OpList
             return null;
         }
 
+        public Nodo BuscarIndice(int indice)
+        {
+            int Indice = -1;
+
+            if (ValidaVacia())
+            {
+                return null;
+            }
+
+            nodoActual = nodoInicial;
+
+            while (nodoActual.Enlace != null)
+            {
+                nodoActual = nodoActual.Enlace;
+                Indice++;
+
+                if (Indice == indice)
+                {
+                    return nodoActual;
+                }
+            }
+
+            return null;
+        }
+
+        public Nodo BuscarAnterior(string dato)
+        {
+            if (ValidaVacia())
+            {
+                return null;
+            }
+
+            Nodo nodoBusqueda = nodoInicial;
+            while (nodoBusqueda.Enlace !=null && nodoBusqueda.Enlace.Dato != dato)
+            {
+                nodoBusqueda = nodoBusqueda.Enlace;
+                if (nodoBusqueda.Enlace.Dato == dato)
+                {
+                    return nodoBusqueda;
+                }
+            }
+            return null;
+        }
+
+        public void BorrarNodo(string dato)
+        {
+            if (!ValidaVacia())
+            {
+                nodoActual = Buscar(dato);
+
+                if (nodoActual!=null)
+                {
+                    Nodo nodoAnterior = BuscarAnterior(dato);
+                    nodoAnterior.Enlace = nodoActual.Enlace;
+
+                    //Otra manera de asignar el valor
+                    //BuscarAnterior(dato).Enlace = nodoActual.Enlace;
+
+                    nodoActual.Enlace = null;
+
+                }
+            }
+        }
 
     }
 }
