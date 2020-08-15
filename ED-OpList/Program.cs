@@ -6,7 +6,8 @@ namespace ED_OpList
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ListaSimplementeLigada lista = new ListaSimplementeLigada();
+            Console.WriteLine(lista.RecorrerLista());
         }
     }
 }
