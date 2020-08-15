@@ -61,6 +61,39 @@ namespace ED_OpList
             nodoActual.Enlace = nodoNuevo;
         }
 
+        public void AgregarNodoInicio(string dato)
+        {
+            nodoActual = nodoInicial;
+
+            Nodo nodoNuevo = new Nodo();
+            nodoNuevo.Dato = dato;
+            nodoNuevo.Enlace = nodoActual.Enlace;
+
+            nodoActual.Enlace = nodoNuevo;
+        }
+
+        public Nodo Buscar(string dato)
+        {
+            //validamos que no este vacio
+            if (ValidaVacia())
+            {
+                return null;
+            }
+
+            Nodo nodoBusqueda = nodoInicial;
+
+            while (nodoBusqueda.Enlace !=null)
+            {
+                nodoBusqueda = nodoBusqueda.Enlace;
+                //situados en el siguiente
+                if (nodoBusqueda.Dato==dato)
+                {
+                    return nodoBusqueda;
+                }
+            }
+
+            return null;
+        }
 
 
     }
