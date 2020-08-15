@@ -8,6 +8,12 @@ namespace ED_OpList
         {
             ListaSimplementeLigada lista = new ListaSimplementeLigada();
             Console.WriteLine(lista.RecorrerLista());
+
+            lista.AgregarNodo("cero");
+            lista.AgregarNodo("uno");
+            lista.AgregarNodo("dos");
+
+            Console.WriteLine(lista.RecorrerLista());
         }
     }
 }

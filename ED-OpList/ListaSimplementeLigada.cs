@@ -36,6 +36,11 @@ namespace ED_OpList
             nodoInicial.Enlace = null;
         }
 
+        public bool ValidaVacia()
+        {
+            return (nodoInicial.Enlace==null);
+        }
+
         public void AgregarNodo(string dato)
         {
             nodoActual = nodoInicial;
@@ -55,6 +60,8 @@ namespace ED_OpList
             //en nodo actual cuyo enlace era nulo ahora apuntara al nuevo nodo
             nodoActual.Enlace = nodoNuevo;
         }
+
+
 
     }
 }
